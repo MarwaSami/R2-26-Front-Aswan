@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexGen | Premium Ecommerce Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-theme="dark">
+    <!-- Navigation -->
+    <nav class="glass">
+        <div class="logo">NexGen.</div>
+        <div class="nav-controls">
+            <div class="search-bar">
+                <i data-lucide="search" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); opacity: 0.5;"></i>
+                <input type="text" id="search-input" placeholder="Search tech, beauty, fashion...">
+            </div>
+            <button id="theme-toggle" class="icon-btn">
+                <i data-lucide="moon"></i>
+            </button>
+            <button class="icon-btn">
+                <i data-lucide="shopping-bag"></i>
+                <span id="cart-count">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Elevate Your Digital Lifestyle.</h1>
+            <p>Discover a curated collection of world-class products, fetched in real-time for the modern enthusiast.</p>
+            <button class="btn-primary" onclick="window.scrollTo({top: 800, behavior: 'smooth'})">Explore Products</button>
+        </div>
+        <!-- Abstract gradient circles for aesthetic -->
+        <div style="position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(99,102,241,0.2) 0%, rgba(99,102,241,0) 70%); z-index: 1;"></div>
+    </section>
+
+    <!-- Categories -->
+    <div class="categories" id="cat-container">
+        <div class="cat-chip active" onclick="filterCategory('all')">All Products</div>
+        <!-- Dynamically populated categories -->
+    </div>
+
+    <!-- Products Grid -->
+    <main class="products-grid" id="product-container">
+        <!-- Products will be injected here -->
+        <span class="loader"></span>
+    </main>
+
+    <!-- Product Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-content glass">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div id="modal-body">
+                <!-- Modal content injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
